@@ -65,6 +65,8 @@
 			
 			<filename>controllers/giustificativo.php</filename>
 			
+			<filename>tables/giustificativo.php</filename>
+			
 			<filename>models/todpre.php</filename>
 			<filename>models/giustificativo.php</filename>
 			<filename>models/giustificativi.php</filename>
