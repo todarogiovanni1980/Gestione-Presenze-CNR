@@ -1,5 +1,5 @@
 <?php defined('_JEXEC') or die('Restricted access'); ?>
- 
+
 <form action="index.php" method="post" name="adminForm" id="adminForm">
 <div class="col100">
     <fieldset class="adminform">
@@ -25,12 +25,22 @@
                 <input class="text_area" type="text" name="codice" id="codice" size="32" maxlength="250" value="<?php echo $this->item->codice;?>" />
             </td>
         </tr>
+        <tr>
+          <td width="100" align="right" class="key">
+            <label for="catid">
+              <?php echo JText::_('Categoria'); ?>:
+            </label>
+          </td>
+          <td>
+            <?php echo JHTML::_('list.category', 'catid', 'com_todpre', $this->item->catid );?>
+          </td>
+        </tr>
     </table>
     </fieldset>
 </div>
- 
+
 <div class="clr"></div>
- 
+
 <input type="hidden" name="option" value="com_todpre" />
 <input type="hidden" name="id" value="<?php echo $this->item->id; ?>" />
 <input type="hidden" name="task" value="" />

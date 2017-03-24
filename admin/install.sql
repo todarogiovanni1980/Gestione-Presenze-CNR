@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS `#__todpre_giustificativi`;
 
 CREATE TABLE `#__todpre_giustificativi` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `catid` int(11) NOT NULL default '0',
   `nome` varchar(25) NOT NULL,
   `codice` varchar(5) NOT NULL,
   `published` tinyint(1) NOT NULL,

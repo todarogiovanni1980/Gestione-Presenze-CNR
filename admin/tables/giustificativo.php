@@ -1,15 +1,15 @@
 <?php
 /**
  * Giustificativo table class
- * 
+ *
  * @package    todarogiovanni.todpre
  * @subpackage Components
  * @license        GNU/GPL
  */
- 
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
- 
+
 /**
  * Giustificativo Table class
  *
@@ -18,23 +18,31 @@ defined('_JEXEC') or die('Restricted access');
  */
 class TableGiustificativo extends JTable
 {
+
     /**
      * Primary Key
      *
      * @var int
      */
     var $id = null;
- 
+
+    /**
+     * Categoria
+     *
+     * @var int
+     */
+    var $catid   = 0;
+
     /**
      * @var string
      */
     var $nome = null;
-    
+
     /**
      * @var string
      */
     var $codice = null;
- 
+
     /**
      * Primary Key
      *
@@ -50,6 +58,6 @@ class TableGiustificativo extends JTable
     function __construct( &$db ) {
         parent::__construct('#__todpre_giustificativi', 'id', $db);
     }
-    
-	
+
+
 }
