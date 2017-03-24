@@ -5,10 +5,10 @@
 	    <table class="adminlist">
 	    <thead>
 	        <tr>
-		        <th width="20"> <input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count($this->items); ?>);" /> </th>
+		    <th width="20"> <input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count($this->items); ?>);" /> </th>
 	            <th width="5"> <?php echo JHTML::_('grid.sort', JText::_('ID'), 'id', $this->lists['order_Dir'], $this->lists['order'] ); ?> </th>
 	            <th width="5"> <?php echo JText::_( 'Codice' ); ?> </th>
-	            <th> <?php echo JText::_( 'Nome' ); ?> </th>
+	            <th> <?php echo JHTML::_('grid.sort', JText::_('Nome'), 'nome', $this->lists['order_Dir'], $this->lists['order'] ); ?> </th>
 	            <th width="5"> <?php echo JText::_( 'Stato' ); ?> </th>
 	        </tr>
 	    </thead>
@@ -41,6 +41,8 @@
 	    </table>
 	</div>
 
+	<input type="hidden" name="filter_order" value="<?php echo $this->lists['order']; ?>" />
+	<input type="hidden" name="filter_order_Dir" value="" />
 	<input type="hidden" name="option" value="com_todpre" />
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="boxchecked" value="0" />
