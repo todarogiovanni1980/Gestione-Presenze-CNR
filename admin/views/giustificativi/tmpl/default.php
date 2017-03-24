@@ -10,15 +10,22 @@
 	            <th width="5"> <?php echo JText::_( 'Codice' ); ?> </th>
 	            <th> <?php echo JText::_( 'Nome' ); ?> </th>
 	            <th width="5"> <?php echo JText::_( 'Stato' ); ?> </th>
-	        </tr>            
+	        </tr>
 	    </thead>
+
+			<tfoot>
+				<tr>
+					<td colspan="9"><?php echo $this->pagination->getListFooter(); ?></td>
+				</tr>
+			</tfoot>
+
 	    <?php
 	    $k = 0;
 	    foreach ($this->items as $i => $row)
 	    {
 		    $checked    = JHTML::_( 'grid.id', $i, $row->id );
 		    $link 		= JRoute::_( 'index.php?option=com_todpre&controller=giustificativo&task=edit&cid[]='. $row->id );
-		    $published 	= JHTML::_('grid.published', $row , $i); 
+		    $published 	= JHTML::_('grid.published', $row , $i);
 	        ?>
 	        <tr class="<?php echo "row" . $k; ?>">
 		        <td> <?php echo $checked; ?> </td>
@@ -33,11 +40,11 @@
 	    ?>
 	    </table>
 	</div>
-	 
+
 	<input type="hidden" name="option" value="com_todpre" />
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="boxchecked" value="0" />
 	<input type="hidden" name="controller" value="giustificativo" />
 	<input type="hidden" name="view" value="giustificativi" />
- 
+
 </form>

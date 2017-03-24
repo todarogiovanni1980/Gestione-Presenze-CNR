@@ -9,10 +9,10 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>1.04</version>
+	<version>1.05</version>
 	 <!-- The description is optional and defaults to the name -->
 	<description>Gestione delle Richieste del personale CNR...</description>
- 
+
 	<!-- Site Main File Copy Section -->
 	<!-- Note the folder attribute: This attribute describes the folder
 		to copy FROM in the package to install therefore files copied
@@ -21,65 +21,65 @@
 		<filename>controller.php</filename>
 		<filename>todpre.php</filename>
 		<filename>index.html</filename>
-		
+
 		<filename>models/todpre.php</filename>
 		<filename>models/richieste.php</filename>
-		
+
 		<filename>models/index.html</filename>
-		
+
 		<filename>views/index.html</filename>
-		
+
 		<filename>views/richieste/index.html</filename>
 		<filename>views/richieste/view.html.php</filename>
 		<filename>views/richieste/tmpl/default.php</filename>
 		<filename>views/richieste/tmpl/index.html</filename>
-		
+
 		<filename>views/todpre/index.html</filename>
 		<filename>views/todpre/view.html.php</filename>
 		<filename>views/todpre/tmpl/default.php</filename>
 		<filename>views/todpre/tmpl/index.html</filename>
 	</files>
-	
+
 	<install>
 		<sql>
 			<file charset="utf8" driver="mysql">install.sql</file>
 		</sql>
 	</install>
-	
+
 	<uninstall>
 		<sql>
 			<file charset="utf8" driver="mysql">uninstall.sql</file>
 		</sql>
 	</uninstall>
- 
+
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu>Gestione Richieste</menu>
-		
+
 		<!-- Administration Main File Copy Section -->
 		<files folder="admin">
 			<filename>todpre.php</filename>
 			<filename>index.html</filename>
-			<filename>install.sql</filename> 
+			<filename>install.sql</filename>
 			<filename>uninstall.sql</filename>
-			
+
 			<filename>controllers/giustificativo.php</filename>
-			
+
 			<filename>tables/giustificativo.php</filename>
-			
+
 			<filename>models/todpre.php</filename>
 			<filename>models/giustificativo.php</filename>
 			<filename>models/giustificativi.php</filename>
-			
+
 			<filename>views/giustificativi/index.html</filename>
 			<filename>views/giustificativi/view.html.php</filename>
 			<filename>views/giustificativi/tmpl/default.php</filename>
 			<filename>views/giustificativi/tmpl/index.html</filename>
-			
+
 			<filename>views/giustificativo/index.html</filename>
 			<filename>views/giustificativo/view.html.php</filename>
 			<filename>views/giustificativo/tmpl/form.php</filename>
 			<filename>views/giustificativo/tmpl/index.html</filename>
-		</files>	
+		</files>
 	</administration>
 </install>
