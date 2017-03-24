@@ -56,7 +56,7 @@
 		<!-- Administration Menu Section -->
 		<menu link="option=com_todpre&amp;view=giustificativi">Gestione Richieste</menu>
 		<submenu>
-			<menu link="option=com_todpre&amp;view=giustificativi">Richieste</menu>
+			<menu link="option=com_todpre&amp;view=giustificativi">Giustificativi</menu>
 			<menu link="option=com_categories&amp;section=com_todpre">Categorie</menu>
 		</submenu>
 
