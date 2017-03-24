@@ -6,7 +6,7 @@
 	    <thead>
 	        <tr>
 		        <th width="20"> <input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count($this->items); ?>);" /> </th>
-	            <th width="5"> <?php echo JText::_( 'ID' ); ?> </th>
+	            <th width="5"> <?php echo JHTML::_('grid.sort', JText::_('ID'), 'id', $this->lists['order_Dir'], $this->lists['order'] ); ?> </th>
 	            <th width="5"> <?php echo JText::_( 'Codice' ); ?> </th>
 	            <th> <?php echo JText::_( 'Nome' ); ?> </th>
 	            <th width="5"> <?php echo JText::_( 'Stato' ); ?> </th>

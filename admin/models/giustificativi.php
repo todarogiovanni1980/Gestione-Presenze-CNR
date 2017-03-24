@@ -57,15 +57,62 @@ class TodpreModelGiustificativi extends JModel
     }
 
     /**
-     * Returns the query
-     * @return string The query to be used to retrieve the rows from the database
+     * Builds a query to get data from #__todpre_giustificativi
+     * @return string SQL query
      */
     function _buildQuery()
     {
-        $query = ' SELECT * '
-            . ' FROM #__todpre_giustificativi '
-        ;
-        return $query;
+      $db =& $this->getDBO();
+      $rtable = $db->nameQuote('#__todpre_giustificativi');
+      $ctable = $db->nameQuote('#__categories');
+      $query = ' SELECT r.*, cc.title AS cat_title'
+             . ' FROM ' . $rtable. ' AS r'
+             . ' LEFT JOIN '.$ctable.' AS cc ON cc.id=r.catid'
+             . $this->_buildQueryOrderBy();
+
+      return $query;
+
+    }
+
+    /**
+     * Build the ORDER part of a query
+     *
+     * @return string part of an SQL query
+     */
+    function _buildQueryOrderBy()
+    {
+      global $mainframe, $option;
+      // Array of allowable order fields
+      $orders = array('nome', 'codice', 'category',
+                      'published', 'ordering', 'id');
+
+      // Get the order field and direction, default order field
+      // is 'ordering', default direction is ascending
+      $filter_order = $mainframe->getUserStateFromRequest(
+       $option.'filter_order', 'filter_order', 'ordering');
+      $filter_order_Dir = strtoupper(
+        $mainframe->getUserStateFromRequest(
+          $option.'filter_order_Dir', 'filter_order_Dir', 'ASC'));
+
+      // Validate the order direction, must be ASC or DESC
+      if ($filter_order_Dir != 'ASC' && $filter_order_Dir != 'DESC')
+      {
+        $filter_order_Dir = 'ASC';
+      }
+
+      // If order column is unknown use the default
+      if (!in_array($filter_order, $orders))
+      {
+        $filter_order = 'ordering';
+      }
+      $orderby = ' ORDER BY '.$filter_order.' '.$filter_order_Dir;
+      if ($filter_order != 'ordering')
+      {
+        $orderby .= ' , ordering ';
+      }
+      // Return the ORDER BY clause
+
+      return $orderby;
     }
 
     /**
@@ -93,7 +140,7 @@ class TodpreModelGiustificativi extends JModel
        	}
        	return $this->_total;
     }
-    
+
     function getPagination()
     {
        	// Load the content if it doesn't already exist
