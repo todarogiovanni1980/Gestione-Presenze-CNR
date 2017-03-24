@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <config>
+     <params>
+       <param name="codicesedecnr"
+              type="text"
+              default=""
+              label="Codice Sede" description="Il codice sede è fornito da CNR e indica il codice istituto" size="7" />
+     </params>
+   </config>

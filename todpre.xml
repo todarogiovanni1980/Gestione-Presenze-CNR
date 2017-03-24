@@ -9,7 +9,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.04</version>
+	<version>0.05</version>
 	 <!-- The description is optional and defaults to the name -->
 	<description>Gestione delle Richieste del personale CNR...</description>
 
@@ -67,6 +67,7 @@
 			<filename>index.html</filename>
 			<filename>install.sql</filename>
 			<filename>uninstall.sql</filename>
+			<filename>config.xml</filename>
 
 			<filename>controllers/giustificativo.php</filename>
 
