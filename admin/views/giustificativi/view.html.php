@@ -26,6 +26,23 @@ class TodpreViewGiustificativi extends JView
      **/
     function display($tpl = null)
     {
+        global $mainframe;
+	    
+	    // Prepare list array
+		$lists = array();
+		
+		// Get the user state
+		$filter_order = $mainframe->getUserStateFromRequest(
+		                 $option.'filter_order',
+		                 'filter_order', 'published');
+		$filter_order_Dir = $mainframe->getUserStateFromRequest(
+		                      $option.'filter_order_Dir',
+		                      'filter_order_Dir', 'ASC');
+		
+		// Build the list array for use in the layout
+		$lists['order'] = $filter_order;
+		$lists['order_Dir'] = $filter_order_Dir;
+        
         JToolBarHelper::title( JText::_( 'Gestione Giustificativi' ), 'generic.png' );
         JToolBarHelper::publishList();
         JToolBarHelper::unpublishList();
@@ -40,6 +57,7 @@ class TodpreViewGiustificativi extends JView
         // push data into the template
         $this->assignRef( 'items', $items );
         $this->assignRef('pagination', $pagination);
+        $this->assignRef('lists', $lists);
 
         parent::display($tpl);
     }
