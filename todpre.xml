@@ -67,6 +67,7 @@
 			<filename>index.html</filename>
 			<filename>install.sql</filename>
 			<filename>uninstall.sql</filename>
+			<filename>config.xml</filename>
 
 			<filename>controllers/giustificativo.php</filename>
 
