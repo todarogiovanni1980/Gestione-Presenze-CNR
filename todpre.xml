@@ -59,6 +59,7 @@
 		<!-- Administration Main File Copy Section -->
 		<files folder="admin">
 			<filename>todpre.php</filename>
+			<filename>controller.php</filename>
 			<filename>index.html</filename>
 			<filename>install.sql</filename>
 			<filename>uninstall.sql</filename>
