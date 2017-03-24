@@ -9,7 +9,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.02</version>
+	<version>0.03</version>
 	 <!-- The description is optional and defaults to the name -->
 	<description>Gestione delle Richieste del personale CNR...</description>
 
@@ -55,6 +55,10 @@
 	<administration>
 		<!-- Administration Menu Section -->
 		<menu>Gestione Richieste</menu>
+		<submenu>
+			<menu link="option=com_todpre&view=richieste">Richieste</menu>
+			<menu link="option=com_categories&amp;section=com_todpre">Categorie</menu>
+		</submenu>
 
 		<!-- Administration Main File Copy Section -->
 		<files folder="admin">
